@@ -1,0 +1,17 @@
+# Dependencias de Node
+/node_modules
+/dist
+
+# Archivos de entorno y claves secretas
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs y otros archivos de sistema
+.vscode
+.DS_Store
