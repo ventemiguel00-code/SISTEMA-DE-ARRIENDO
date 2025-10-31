@@ -1,0 +1,15 @@
+// src/lib/supabaseClient.ts
+
+import { createClient } from '@supabase/supabase-js'
+
+// ✅ SOLUCIÓN: Usamos import.meta.env para leer variables en React/Vite.
+// Esto soluciona el error "process is not defined".
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL 
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  // Solo para alertar en consola si faltan las claves
+  console.error("ERROR CRÍTICO: Faltan las variables de entorno de Supabase. Verifique .env.local y Vercel.");
+}
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)

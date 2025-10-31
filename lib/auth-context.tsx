@@ -1,5 +1,9 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Usuario, mockUsuarios } from './mock-data';
+// En src/lib/auth-context.tsx
+
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { User, Session } from '@supabase/supabase-js'; // <-- Necesitas User y Session de Supabase
+import { supabase } from './supabaseClient';           // <-- ¡Importa tu conexión corregida!
+// ... el resto de tu código continúa aquí.
 
 interface AuthContextType {
   currentUser: Usuario | null;
